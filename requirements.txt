@@ -1,7 +1,7 @@
 asgiref==3.5.0
 defusedxml==0.7.1
 diff-match-patch==20200713
-Django==4.0.1
+Django==4.0.2
 django-import-export==2.7.1
 django-suit==2.0a1
 django-widget-tweaks==1.4.12
