@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} My account {% endblock %}
+
+{% block breadcrumb %}
+
+    <thead class="table-active">
+      <tr>
+        <th>My account</th>
+      </tr>
+    </thead>
+
+{% endblock %}
+
+{% block content %}
+
+<form method="post" novalidate>
+  {% csrf_token %}
+  {% include 'includes/form.html' %}
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <button type="submit" class="btn btn-outline-success">Save Changes</button>
+  </div>
+</form>
+
+{% endblock %}

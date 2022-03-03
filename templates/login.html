@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<!-- <link rel="stylesheet" href="{% static 'css/account.css' %}"> -->
+{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/account.css' %}">
+<div class="container">
+  <h1 class="text-center logo my-4">
+    <a class="title" href="{% url 'home' %}">Django Boards</a>
+  </h1>
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10 col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">LOGIN</h3>
+          <form method="Post" novalidate>
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}">
+            {% include 'includes/form.html'%}
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <button type="submit" class="btn btn-outline-primary">Log in</button>
+            </div>  
+          </form>
+        </div>
+        <div class="card-footer text-muted text-center">
+          Create New account <a  style="text-decoration: none;" href="{% url 'signup' %}">Sign up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
